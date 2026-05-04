@@ -1,0 +1,310 @@
+/* ========================================================================== */
+/* THEME: JohnnyCyan - QT UNIFICATION MANIFEST (FINAL AVION X HYBRID)         */
+/* TARGET: Match GTK edits: Lighter main area, Avion X teal sidebar/toolbars, */
+/* larger nav buttons/pathbar, glowing cyan divider.                          */
+/* ========================================================================== */
+
+/* 1. GLOBAL RESET & FONTS */
+/* Select all Qt widgets globally */
+QWidget {
+    /* Set global text color to Cyan Core (#15F4EE) */
+    color: #15F4EE;
+    /* Set global background color to standard Happy Navy (#1E2E3E) */
+    background-color: #1E2E3E;
+    /* Define the retro font stack */
+    font-family: "Press Start 2P", "SovietecOS", sans-serif;
+    /* Set base font size to 10px */
+    font-size: 10px;
+    /* Set selection background to semi-transparent cyan glass */
+    selection-background-color: rgba(21, 244, 238, 0.35);
+    /* Set selected text color to solid cyan */
+    selection-color: #15F4EE;
+    /* End global widget definition */
+}
+
+/* 2. WINDOWS & DIALOGS */
+/* Target main application windows, dialogs, and dockable widgets */
+QMainWindow, QDialog, QDockWidget {
+    /* Ensure background is standard Happy Navy */
+    background-color: #1E2E3E;
+    /* End window definition */
+}
+
+/* NEW: TOOLBARS & SIDEBARS (AVION X TEAL) */
+/* Target Toolbars (where nav buttons live) and DockWidgets (sidebars) */
+QToolBar, QDockWidget {
+    /* Set background to the new Avion X teal (#2A4A5A) */
+    background-color: #2A4A5A;
+    /* No border for these containers */
+    border: none;
+    /* End toolbar/dock definition */
+}
+
+/* 3. BUTTONS (GENERAL & TOOLBAR SIZING) */
+/* Target standard push buttons */
+QPushButton {
+    /* Background color Dark Anchor (#091018) */
+    background-color: #091018;
+    /* Cyan border */
+    border: 1px solid #15F4EE;
+    /* Standard padding for general buttons */
+    padding: 6px;
+    /* Rounded corners */
+    border-radius: 4px;
+    /* Text color cyan */
+    color: #15F4EE;
+    /* End button definition */
+}
+
+/* NEW: Larger Toolbar Buttons (Navigation) */
+/* Target buttons specifically inside a toolbar area */
+QToolBar QPushButton {
+    /* Background is Avion X teal to match toolbar */
+    background-color: #2A4A5A;
+    /* Larger padding as requested for bigger nav buttons */
+    padding: 10px 14px;
+    /* Minimum height for larger size */
+    min-height: 34px;
+    /* Minimum width */
+    min-width: 34px;
+    /* Cyan border */
+    border: 1px solid #15F4EE;
+    /* End toolbar button definition */
+}
+
+/* State: Hovering over any button */
+QPushButton:hover {
+    /* Background becomes solid cyan */
+    background-color: #15F4EE;
+    /* Text becomes black */
+    color: #000000;
+    /* End button hover definition */
+}
+
+/* State: Pressing any button */
+QPushButton:pressed {
+    /* Background becomes semi-transparent glass */
+    background-color: rgba(21, 244, 238, 0.35);
+    /* End button pressed definition */
+}
+
+/* 4. INPUT FIELDS & PATH BARS */
+/* Target line edits (path bars), text edits, and spin boxes */
+QLineEdit, QTextEdit, QPlainTextEdit, QSpinBox {
+    /* Background color Dark Anchor (#091018) */
+    background-color: #091018;
+    /* Cyan border */
+    border: 1px solid #15F4EE;
+    /* Standard padding */
+    padding: 4px;
+    /* Selection background solid cyan */
+    selection-background-color: #15F4EE;
+    /* Selected text color black */
+    selection-color: #000000;
+    /* End input field definition */
+}
+
+/* NEW: Larger Path/Location Bar inside Toolbars */
+/* Target LineEdits specifically inside toolbars (like Dolphin path bar) */
+QToolBar QLineEdit {
+    /* Background set to Avion X teal (#2A4A5A) */
+    background-color: #2A4A5A;
+    /* Increased padding for larger size as requested */
+    padding: 8px 12px;
+    /* Slightly larger font size */
+    font-size: 11px;
+    /* Minimum height */
+    min-height: 32px;
+    /* End toolbar input definition */
+}
+
+/* State: Input field has focus */
+QLineEdit:focus, QTextEdit:focus {
+    /* Thicker border to simulate glow */
+    border: 2px solid #15F4EE;
+    /* End input focus definition */
+}
+
+/* 5. MENUS */
+/* Target popup menus */
+QMenu {
+    /* Background color standard navy (#1E2E3E) */
+    background-color: #1E2E3E;
+    /* Cyan border */
+    border: 1px solid #15F4EE;
+    /* Padding for the menu container */
+    padding: 4px;
+    /* End menu definition */
+}
+
+/* State: Selected item in a menu */
+QMenu::item:selected {
+    /* Background becomes solid cyan */
+    background-color: #15F4EE;
+    /* Text becomes black */
+    color: #000000;
+    /* End menu item selected definition */
+}
+
+/* 6. LISTS & TREES (MAIN AREA - LIGHTER BLUE) */
+/* Target main view widgets (files lists, tree views) */
+QTreeView, QListView, QTableView {
+    /* NEW: Background set to lighter blue (#263a4d) as requested for main area */
+    background-color: #263a4d;
+    /* Cyan border around the view */
+    border: 1px solid #15F4EE;
+    /* Alternate row color (slightly darker than main bg) */
+    alternate-background-color: #203040;
+    /* Selection background semi-transparent glass */
+    selection-background-color: rgba(21, 244, 238, 0.35);
+    /* Selected text color cyan */
+    selection-color: #15F4EE;
+    /* Remove default focus outline */
+    outline: 0;
+    /* End view definition */
+}
+
+/* Target header sections in table views */
+QHeaderView::section {
+    /* Background color Dark Anchor */
+    background-color: #091018;
+    /* Text color cyan */
+    color: #15F4EE;
+    /* Cyan border */
+    border: 1px solid #15F4EE;
+    /* Padding for headers */
+    padding: 4px;
+    /* End header definition */
+}
+
+/* 7. NEW: CYAN GLOWING DIVIDER (SPLITTERS) */
+/* Target the handle between split views */
+QSplitter::handle {
+    /* Set background to solid cyan (#15F4EE) */
+    background-color: #15F4EE;
+    /* Minimum thickness to make it visible */
+    width: 2px;
+    height: 2px;
+    /* End splitter handle definition */
+}
+
+/* 8. SCROLLBARS (FORCED VISIBILITY) */
+/* Target vertical scrollbar background track */
+QScrollBar:vertical {
+    /* Dark background track */
+    background: #091018;
+    /* Force width to 16px for visibility */
+    width: 16px;
+    /* Zero margins */
+    margin: 0px;
+/* End vertical scrollbar definition */
+}
+
+/* Target vertical scrollbar handle (thumb) */
+QScrollBar::handle:vertical {
+    /* Solid cyan handle */
+    background: #15F4EE;
+    /* Minimum height for the handle */
+    min-height: 20px;
+    /* Rounded corners */
+    border-radius: 2px;
+/* End vertical handle definition */
+}
+
+/* State: Hovering over vertical handle */
+QScrollBar::handle:vertical:hover {
+    /* REPLACED WHITE (#FFFFFF) WITH AVION X TEAL (#2A4A5A) */
+    background: #2A4A5A;
+    /* End handle hover definition */
+}
+
+/* Hide default scrollbar sub-line buttons */
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    /* No background */
+    background: none;
+    /* Zero height */
+    height: 0px;
+/* End sub-line definition */
+}
+
+/* Target horizontal scrollbar background track */
+QScrollBar:horizontal {
+    /* Dark background track */
+    background: #091018;
+    /* Force height to 16px */
+    height: 16px;
+    /* End horizontal scrollbar definition */
+}
+
+/* Target horizontal scrollbar handle (thumb) */
+QScrollBar::handle:horizontal {
+    /* Solid cyan handle */
+    background: #15F4EE;
+    /* Minimum width for handle */
+    min-width: 20px;
+    /* Rounded corners */
+    border-radius: 2px;
+    /* End horizontal handle definition */
+}
+
+/* 9. TABS (NOTEBOOKS) */
+/* Target the pane containing the tab content */
+QTabWidget::pane {
+    /* Cyan border around content */
+    border: 1px solid #15F4EE;
+    /* End tab pane definition */
+}
+
+/* Target individual tabs */
+QTabBar::tab {
+    /* Semi-transparent dark background */
+    background: rgba(9, 16, 24, 0.5);
+    /* Text color cyan */
+    color: #15F4EE;
+    /* Semi-transparent cyan border */
+    border: 1px solid rgba(21, 244, 238, 0.3);
+    /* Padding inside tabs */
+    padding: 6px 10px;
+    /* Margin between tabs */
+    margin-right: 2px;
+    /* End tab definition */
+}
+
+/* State: The selected tab */
+QTabBar::tab:selected {
+    /* Background becomes standard navy */
+    background: #1E2E3E;
+    /* Solid cyan border */
+    border: 1px solid #15F4EE;
+    /* Remove bottom border to blend with pane */
+    border-bottom: none;
+    /* End selected tab definition */
+}
+
+/* State: Hovering over a tab */
+QTabBar::tab:hover {
+    /* Background becomes solid cyan */
+    background: #15F4EE;
+    /* Text becomes black */
+    color: #000000;
+    /* End tab hover definition */
+}
+
+/* 10. PROGRESS BARS */
+/* Target progress bar container */
+QProgressBar {
+    /* Cyan border */
+    border: 1px solid #15F4EE;
+    /* Center the percentage text */
+    text-align: center;
+    /* Dark background for unfilled area */
+    background-color: #091018;
+    /* End progress bar definition */
+}
+
+/* Target the filled chunk of the progress bar */
+QProgressBar::chunk {
+    /* Solid cyan fill color */
+    background-color: #15F4EE;
+    /* End progress chunk definition */
+}

@@ -1,0 +1,66 @@
+#[Configuration]
+#BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
+#MiscAlwaysShowTabs=FALSE
+#MiscBell=FALSE
+#MiscBellUrgent=FALSE
+#MiscBordersDefault=FALSE
+#MiscCursorBlinks=FALSE
+#MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
+#MiscDefaultGeometry=80x24
+#MiscInheritGeometry=FALSE
+#MiscMenubarDefault=FALSE
+#MiscMouseAutohide=FALSE
+#MiscMouseWheelZoom=TRUE
+#MiscToolbarDefault=FALSE
+#MiscConfirmClose=FALSE
+#MiscCycleTabs=TRUE
+#MiscTabCloseButtons=TRUE
+#MiscTabCloseMiddleClick=TRUE
+#MiscTabPosition=GTK_POS_TOP
+#MiscHighlightUrls=TRUE
+#MiscMiddleClickOpensUri=FALSE
+#MiscCopyOnSelect=FALSE
+#MiscShowRelaunchDialog=TRUE
+#MiscRewrapOnResize=TRUE
+#MiscUseShiftArrowsToScroll=FALSE
+#MiscSlimTabs=FALSE
+#MiscNewTabAdjacent=FALSE
+#MiscSearchDialogOpacity=100
+#MiscShowUnsafePasteDialog=FALSE
+#ColorForeground=#00d6fbbace91
+#ScrollingBar=TERMINAL_SCROLLBAR_NONE
+#FontName=Terminus Bold 14
+#ColorPalette=rgb(0,0,0);rgb(170,0,0);rgb(0,170,0);rgb(170,85,0);rgb(0,0,170);rgb(170,0,170);rgb(0,170,170);rgb(170,170,170);rgb(85,85,85);rgb(255,85,85);rgb(85,255,85);rgb(255,255,85);rgb(85,85,255);rgb(255,85,255);rgb(103,150,150);rgb(255,255,255)
+#ColorBackground=#487f528664b1
+#MiscRightClickAction=TERMINAL_RIGHT_CLICK_ACTION_CONTEXT_MENU
+#BackgroundDarkness=0.450000
+[Configuration]
+FontName=Press Start 2P 14
+MiscAlwaysShowTabs=FALSE
+MiscBell=FALSE
+MiscBordersDefault=FALSE
+MiscCursorBlinks=FALSE
+MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
+MiscDefaultGeometry=80x24
+MiscInheritGeometry=FALSE
+MiscMenubarDefault=FALSE
+MiscMouseAutohide=FALSE
+MiscToolbarDefault=FALSE
+MiscConfirmClose=FALSE
+ScrollingBar=TERMINAL_SCROLLBAR_NONE
+
+# --- THE ALL-NEON GOD MODE ---
+# Background: Happy Navy (Still used for the window background)
+ColorBackground=#1E2E3E
+# Foreground: Vapor Cyan (Main Typing Text)
+ColorForeground=#00FFFF
+# Cursor: Neon Green
+ColorCursor=#39FF14
+# Selection: Neon Cyan
+ColorSelection=#00FFFF
+ColorSelectionBackground=#2A4A5A
+
+# The 16-Color Palette (No Darks, All Green User)
+# Slot 0=ElectricViolet (Was Navy) | Slot 8=NeonRed (Was Teal)
+# Slot 10=Green (User) | Slot 13 & 14=Green (Labels)
+ColorPalette=#7F00FF;#FF007F;#39FF14;#FAFF00;#15F4EE;#05FFA1;#01CDFE;#FFBF00;#FF0055;#FF71CE;#39FF14;#FFFb96;#00FECA;#39FF14;#39FF14;#B026FF

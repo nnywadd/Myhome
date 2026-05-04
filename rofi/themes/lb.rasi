@@ -1,0 +1,189 @@
+/**
+ * ROFI Color theme: JohnnyCyan Edition
+ * "The Grid" Unification - NOW WITH REAL GLASS OPACITY
+ */
+
+* {
+    /* --- JOHNNY CYAN PALETTE --- */
+    
+    /* Happy Navy Background with 90% Opacity (Matches Waybar) */
+    background:                  rgba(30, 46, 62, 0.90);
+    
+    /* Cyan Core Text/Borders */
+    foreground:                  #15F4EE;
+    
+    /* Selection: Cyan Background, Black Text */
+    selected-normal-background:  #15F4EE;
+    selected-normal-foreground:  #000000;
+    
+    /* Borders & Separators */
+    bordercolor:                 #15F4EE;
+    separatorcolor:              #15F4EE;
+    
+    /* Urgent States (Matching Waybar Red) */
+    urgent-background:           #eb4d4b;
+    urgent-foreground:           #ffffff;
+    selected-urgent-background:  #ffffff;
+    selected-urgent-foreground:  #eb4d4b;
+
+    /* Active States (Yellow/Gold for active windows) */
+    active-background:           rgba(30, 46, 62, 0.90);
+    active-foreground:           #f1c40f;
+    selected-active-background:  #f1c40f;
+    selected-active-foreground:  #000000;
+
+    /* --- GLOBAL SETTINGS --- */
+    background-color:            transparent;
+    spacing:                     2;
+    font:                        "Press Start 2P 10"; 
+    
+    /* Mappings */
+    normal-background:           transparent;
+    normal-foreground:           @foreground;
+    
+    /* Subtle glass effect for alternate rows */
+    alternate-normal-background: rgba(255, 255, 255, 0.05);
+    alternate-normal-foreground: @foreground;
+    
+    alternate-urgent-background: rgba(255, 255, 255, 0.05);
+    alternate-urgent-foreground: @urgent-foreground;
+    
+    alternate-active-background: rgba(255, 255, 255, 0.05);
+    alternate-active-foreground: @active-foreground;
+}
+
+window {
+    /* This pulls the RGBA value, enabling transparency */
+    background-color: @background;
+    
+    border:           2px;
+    border-color:     @bordercolor;
+    padding:          20px;
+    width:            40%;
+}
+
+mainbox {
+    border:  0;
+    padding: 0;
+}
+
+message {
+    border:       2px dash 0px 0px;
+    border-color: @separatorcolor;
+    padding:      10px 0px 0px 0px;
+}
+
+textbox {
+    text-color: @foreground;
+}
+
+listview {
+    fixed-height: 0;
+    border:       2px dash 0px 0px;
+    border-color: @separatorcolor;
+    spacing:      2px;
+    scrollbar:    true;
+    padding:      10px 0px 0px;
+    lines:        10;
+}
+
+element {
+    border:  0;
+    padding: 5px;
+}
+
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+    vertical-align:   0.5;
+}
+
+/* --- STATE LOGIC --- */
+element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+
+element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}
+element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+
+element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+}
+element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+}
+
+scrollbar {
+    width:        4px;
+    border:       0;
+    handle-width: 8px;
+    padding:      0;
+    handle-color: @foreground; 
+}
+
+mode-switcher {
+    border:       2px dash 0px 0px;
+    border-color: @separatorcolor;
+}
+
+button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+inputbar {
+    spacing:    0;
+    text-color: @normal-foreground;
+    padding:    1px;
+    children:   [ prompt, textbox-prompt-colon, entry, case-indicator ];
+}
+
+case-indicator {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+
+entry {
+    spacing:    0;
+    text-color: @normal-foreground;
+    placeholder: "Search The Grid...";
+    placeholder-color: rgba(21, 244, 238, 0.4);
+}
+
+prompt {
+    spacing:    0;
+    text-color: @normal-foreground;
+    font:       "Press Start 2P 10";
+}
+
+textbox-prompt-colon {
+    expand:     false;
+    str:        ":";
+    margin:     0px 0.5em 0em 0em;
+    text-color: @normal-foreground;
+}
