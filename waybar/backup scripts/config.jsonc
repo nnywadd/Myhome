@@ -1,0 +1,224 @@
+{
+    // =============================================================================
+    // JOHNNYCYAN WAYBAR CONFIGURATION - GAP CLOSER
+    // =============================================================================
+    "spacing": 0,
+
+    // -----------------------------------------------------------------------------
+    // 1. MODULE LAYOUT
+    // -----------------------------------------------------------------------------
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/esde",          
+        "custom/steam",
+        "custom/pcsx2",         
+        "custom/rpcs3",         
+        "custom/dolphin",       
+        "custom/ryujinx",       
+        "custom/shot_full",     
+        "custom/shot_win",
+        "custom/shot_region",
+        "custom/minimize",      // WIDENED
+        "custom/restore",       // WIDENED
+        "custom/vpn",           
+        "custom/rip_video"      
+    ],
+    
+    "modules-center": [
+        "clock"
+    ],
+    
+    "modules-right": [
+        "custom/rip",           
+        "custom/gpu",           
+        "cpu",                  
+        "memory",               
+        "temperature",          
+        "custom/cava",          
+        "custom/cmus_prev",     
+        "custom/cmus_play",
+        "custom/cmus_pause",
+        "custom/cmus_stop",
+        "custom/cmus_next",
+        "custom/media",         
+        "pulseaudio/slider",    
+        "network",              
+        "tray",                 
+        "custom/power"          
+    ],
+
+    // -----------------------------------------------------------------------------
+    // 2. WORKSPACES
+    // -----------------------------------------------------------------------------
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "all-outputs": true,
+        "persistent-workspaces": {
+            "1": [], "2": [], "3": [], "4": [], "5": [],
+            "6": [], "7": [], "8": [], "9": [], "10": []
+        },
+        "format-icons": {
+            "active": "",
+            "default": "",
+            "empty": ""
+        }
+    },
+
+    // -----------------------------------------------------------------------------
+    // 3. CENTER CLOCK
+    // -----------------------------------------------------------------------------
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "format": {
+                "months": "<span color='#15F4EE'><b>{}</b></span>",
+                "days": "<span color='#15F4EE'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": { "on-click-right": "mode" },
+        "min-length": 15,
+        "align": 0.5
+    },
+
+    // -----------------------------------------------------------------------------
+    // 4. GAMING LAUNCHERS
+    // -----------------------------------------------------------------------------
+    "custom/esde": { "format": "Retro-Games", "on-click": "~/.local/bin/ES-DE_x64.AppImage", "min-length": 12, "align": 0.5 },
+    "custom/steam": { "format": "Steam", "on-click": "steam", "min-length": 6, "align": 0.5 },
+    "custom/pcsx2": { "format": "PS2", "on-click": "pcsx2-qt", "min-length": 4, "align": 0.5 },
+    "custom/rpcs3": { "format": "PS3", "on-click": "rpcs3", "min-length": 4, "align": 0.5 },
+    "custom/dolphin": { "format": "GC/Wii", "on-click": "dolphin-emu", "min-length": 8, "align": 0.5 },
+    "custom/ryujinx": { "format": "Switch", "on-click": "/usr/share/ryujinx-1.3.61/Ryujinx", "min-length": 8, "align": 0.5 },
+
+    // -----------------------------------------------------------------------------
+    // 5. TOOLS (WIDENED MINIMIZE/RESTORE)
+    // -----------------------------------------------------------------------------
+    "custom/shot_full": { "format": "ScreenShot", "on-click": "hyprshot -m output", "min-length": 11, "align": 0.5 },
+    "custom/shot_win": { "format": "WindowShot", "on-click": "hyprshot -m window", "min-length": 11, "align": 0.5 },
+    "custom/shot_region": { "format": "Snip-Snip", "on-click": "hyprshot -m region", "min-length": 10, "align": 0.5 },
+    
+    "custom/minimize": { 
+        "format": "", 
+        "on-click": "~/.config/waybar/scripts/hide_all.sh", 
+        "min-length": 2, // WIDENED (was 3)
+        "align": 0.5 
+    },
+    "custom/restore": { 
+        "format": "", 
+        "on-click": "~/.config/waybar/scripts/restore_all.sh", 
+        "min-length": 2, // WIDENED (was 3)
+        "align": 0.5 
+    },
+    
+    "custom/vpn": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/waybar-vpn-status.sh",
+        "on-click": "~/.config/waybar/scripts/vpn_selector.sh",
+        "interval": 5,
+        "return-type": "json",
+        "min-length": 15,
+        "max-length": 15,
+        "align": 0.5
+    },
+
+    // -----------------------------------------------------------------------------
+    // 6. RIPPERS
+    // -----------------------------------------------------------------------------
+    "custom/rip": {
+        "format": "{}",
+        "interval": 2,
+        "exec": "pgrep -x yt-dlp >/dev/null && echo 'Ripping' || echo 'Rip Sound'",
+        "on-click": "~/.config/waybar/scripts/rip_url.sh",
+        "min-length": 11,
+        "max-length": 11,
+        "align": 0.5
+    },
+    "custom/rip_video": {
+        "format": "{}",
+        "interval": 2,
+        "exec": "pgrep -x yt-dlp >/dev/null && echo 'Ripping' || echo 'Rip Video'",
+        "on-click": "~/.config/waybar/scripts/rip_video.sh",
+        "min-length": 11,
+        "max-length": 11,
+        "align": 0.5
+    },
+
+    // -----------------------------------------------------------------------------
+    // 7. MEDIA
+    // -----------------------------------------------------------------------------
+    "custom/media": {
+        "format": "{}",
+        "max-length": 25,
+        "min-length": 25,
+        "align": 0.5,
+        "interval": 1,
+        "exec": "~/.config/waybar/scripts/waybar-media.sh"
+    },
+    "custom/cava": {
+        "exec": "~/.config/waybar/scripts/waybar-cava.sh",
+        "format": "{}",
+        "restart-interval": 1,
+        "min-length": 18,
+        "max-length": 18,
+        "align": 0.5,
+        "hide-empty-text": false
+    },
+    "custom/cmus_play": { "format": "", "on-click": "cmus-remote -p", "min-length": 3, "align": 0.5 },
+    "custom/cmus_pause": { "format": "", "on-click": "cmus-remote -u", "min-length": 3, "align": 0.5 },
+    "custom/cmus_stop": { "format": "", "on-click": "cmus-remote -s", "min-length": 3, "align": 0.5 },
+    "custom/cmus_prev": { "format": "", "on-click": "cmus-remote -r", "min-length": 3, "align": 0.5 },
+    "custom/cmus_next": { "format": "", "on-click": "cmus-remote -n", "min-length": 3, "align": 0.5 },
+
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal",
+        "on-click-right": "pavucontrol-qt"
+    },
+
+    // -----------------------------------------------------------------------------
+    // 8. HARDWARE & NETWORK
+    // -----------------------------------------------------------------------------
+    "custom/gpu": {
+        "exec": "cat /sys/class/hwmon/hwmon*/device/gpu_busy_percent",
+        "format": "GPU: {}%",
+        "interval": 5,
+        "min-length": 8,
+        "max-length": 8,
+        "align": 0.5
+    },
+    "cpu": {
+        "interval": 1,
+        "format": "CPU: {usage}%",
+        "min-length": 6,
+        "max-length": 6,
+        "align": 0.5
+    },
+    "memory": {
+        "interval": 1,
+        "format": "RAM: {percentage}%",
+        "min-length": 7,
+        "max-length": 7,
+        "align": 0.5
+    },
+    "temperature": {
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""],
+        "min-length": 7,
+        "max-length": 7,
+        "align": 0.5
+    },
+    "network": {
+        "format-wifi": " {signalStrength}%",
+        "format-ethernet": "DL: {bandwidthDownBits}",
+        "format-disconnected": "⚠ DISC",
+        "align": 0.5,
+        "on-click-right": "xfce4-terminal --geometry=60x20 --title='Network Admin' -e 'sudo nmtui'"
+    },
+    "tray": { "spacing": 10 },
+    "custom/power": { "format": "⏻ ", "on-click": "/home/kami/.local/bin/shutdown.sh", "tooltip": false }
+}

@@ -1,0 +1,150 @@
+/* ==========================================================================
+   THEME: JohnnyCyan - WAYBAR (Glass Terminal Edition)
+   TARGET: Press Start 2P, High Transparency (0.65), Cyan Boxes
+   ========================================================================== */
+
+* {
+    /* Priority 1: Press Start 2P */
+    font-family: "Press Start 2P", "SovietecOS", "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 11px;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+}
+
+/* 1. THE MAIN BAR (Terminal Transparency) */
+window#waybar {
+    /* Dropped alpha to 0.65 to match terminal glass feel */
+    background-color: rgba(14, 23, 36, 0.65); 
+    border-bottom: 2px solid #15F4EE;
+    color: #15F4EE;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* 2. WORKSPACES (Cyan Box Protocol) */
+#workspaces button {
+    padding: 0 10px;
+    background-color: transparent;
+    color: #15F4EE;
+    border-bottom: 3px solid transparent;
+    margin: 0 2px;
+}
+
+/* Active Workspace: Glowing Box */
+#workspaces button.active {
+    background-color: rgba(21, 244, 238, 0.15);
+    border-bottom: 3px solid #15F4EE;
+    color: #15F4EE;
+    box-shadow: 0 0 10px rgba(21, 244, 238, 0.25);
+}
+
+/* Hover: Ignition */
+#workspaces button:hover {
+    background-color: #15F4EE;
+    color: #000000;
+    box-shadow: 0 0 15px #15F4EE;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+    color: #ffffff;
+}
+
+/* 3. MODULES (The "Tab" Look) */
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#mpd,
+#custom-power,
+#keyboard-state {
+    padding: 4px 12px;
+    margin: 4px 3px;
+    /* Slightly more transparent module background to match the new bar */
+    background-color: rgba(17, 26, 36, 0.5); 
+    color: #15F4EE;
+    border: 1px solid rgba(21, 244, 238, 0.3);
+    border-radius: 4px;
+}
+
+/* 4. MODULE HOVER EFFECTS (Ignition) */
+#clock:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#disk:hover,
+#temperature:hover,
+#network:hover,
+#pulseaudio:hover,
+#tray:hover,
+#custom-power:hover {
+    background-color: #15F4EE;
+    color: #000000;
+    border-color: #15F4EE;
+    box-shadow: 0 0 10px #15F4EE;
+}
+
+/* 5. SPECIFIC STATES */
+
+/* Battery */
+#battery.charging, #battery.plugged {
+    color: #15F4EE;
+    background-color: rgba(21, 244, 238, 0.2);
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* PulseAudio */
+#pulseaudio.muted {
+    color: #586e75;
+    background-color: rgba(0,0,0,0.5);
+    border-color: #586e75;
+}
+
+/* Network */
+#network.disconnected {
+    color: #f53c3c;
+    border-color: #f53c3c;
+}
+
+/* Tray Icons */
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+/* Custom Power Button */
+#custom-power {
+    color: #eb4d4b;
+    border-color: rgba(235, 77, 75, 0.3);
+}
+
+#custom-power:hover {
+    background-color: #eb4d4b;
+    color: #ffffff;
+    box-shadow: 0 0 10px #eb4d4b;
+}
